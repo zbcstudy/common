@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql.connector as conn
 import datetime, time
 
 DB_USER = 'root'
@@ -8,7 +8,7 @@ DB = 'vo_account'
 
 
 def connect():
-    cnx = mysql.connector.connect(host=DB_HOST, user=DB_USER, password=DB_PASS, database=DB)
+    cnx = conn.connect(host=DB_HOST, user=DB_USER, password=DB_PASS, database=DB)
     cursor = cnx.cursor()
     query = "SELECT * from mt_text"
     cursor.execute(query)
